@@ -6,6 +6,8 @@
 # if __name__ == '__main__':
 #     app.run(debug=True)
 
+# this is how I figured out to put an html online 
+# locally
 
 from flask import Flask, render_template
 app = Flask(__name__)
