@@ -14,6 +14,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+    
 
     <title>{% block title %}Golf Review!{% endblock %}</title>
   </head>
@@ -32,10 +33,36 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="survey" href="/survey">Survey Here</a>
+          <a class="nav-item nav-link" id="management" href="/managementsignup">Management Signup</a>
+          <a class="nav-item nav-link" id="management" href="/managementlogin">Management Login</a>
         </div>
       </div>
     </ul>  
     </nav>
+    <!-- flashes messages on the screen -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, messages in messages%}
+      {% if category == 'error'%}
+      <div class="alert alert-danger alter-dismissable fade show" role="alert">
+        {{ message }}
+        <!-- this is a fancy bootstrap button -->
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% else %}
+      <div class="alert alert-success alter-dismissable fade show" role="alert">
+        {{ message }}
+        <!-- this is a fancy bootstrap button -->
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
     <div class="container">
     {% block content %}{% endblock %}
     </div>

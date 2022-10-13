@@ -1,4 +1,6 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
+from flask_datepicker import datepicker
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 
@@ -10,20 +12,22 @@ def create_app():
     app.config['SECRET_KEY'] = 'GOLFCOURSEPROJECT'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
+    Bootstrap(app)
+    datepicker(app)
+    
 
-    # from .views import views
     from .views import views
     from .auth import auth
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    # from .models import User, Note
+    from .models import User
 
-    # create_database(app)
+    create_database(app)
 
     return app
-# def create_database(app):
-#     if not path.exists('website/' + DB_NAME):
-#         db.create_all(app=app)
-#         print('Created Database!')
+def create_database(app):
+    if not path.exists('website/' + DB_NAME):
+        db.create_all(app=app)
+        print('Created Database!')
