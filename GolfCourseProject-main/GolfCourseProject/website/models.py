@@ -22,7 +22,6 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     first_Name = db.Column(db.String(150))
-    # last_name = db.Column(db.String(150))
     # date = db.Column(db.DateTime(timezone=True), default=func.now())
     # review = db.relationship('Review')
 
