@@ -3,4 +3,39 @@
     survey questions 2 here
 </h1>
 <p> Put a submit button here </p>
+{% extends "base.html" %} {% block title %} Survey Part 2 {% endblock %} {% block content %}
+<br>
+<h2>Radio Buttons 2</h2>
+
+<p>Choose your favorite number again:</p>
+
+<form>
+     <input 
+     type="radio" 
+     id= "10" 
+     name="fav_num2" 
+     value= "10">
+    <label for= "10"> 10 </label>
+    <br>
+     <input 
+     type="radio" 
+     id="20" 
+     name="fav_num2" 
+     value= "20">
+    <label for="20"> 20 </label>
+    <br>
+     <input 
+     type="radio" 
+     id="30" 
+     name="fav_num2" 
+     value="30">
+    <label for="30"> 30 </label>
+</form>
+
+<br>
+
+<br>
+<br>
+
+    <button type="submit" class="btn btn-primary"> Submit </button></p>
 {% endblock %}
