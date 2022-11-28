@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <br>
+    <br>
+<meta charset="UTF-8">
+<style>
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 20px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 25px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    h4 {
+    text-align: left;
+    }
+    
+    .button1 {width: 100%;}
+</style>
+<br>
+<br>
+<h4>Manager: {{manager.first_Name}}</h4>
+<h4>Golf Course: {{manager.golf_Course}}</h4>
+<a href="/reviews" class="btn btn-primary btn-lg, button1" role="button">All Reviews</a>
+<br>
+<br>
+<a href="/search" class="btn btn-primary btn-lg, button1" role="button">Search</a>
+<br>
+<br>
+<a href="/avgrating" class="btn btn-primary btn-lg, button1" role="button">Average Rating</a>
+</head>
+</html>
+
+{% endblock %}

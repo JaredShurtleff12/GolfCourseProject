@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Golf Review{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<body>
+<br>
+<br>
+<h1>Welcome to the Golf Review Site</h1>
+<br>
+<p>
+    Click "Start Survey" to start!
+</p>
+<br>
+<a href="/survey" class="next">Next &raquo;</a>
+<br>
+
+<image src="{{ url_for('static', filename='images/golferGuy.jpg')}}"
+/>    
+
+</body>
+</html>
+{% endblock %}

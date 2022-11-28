@@ -1,0 +1,333 @@
+{% extends "base.html" %} {% block title %} Survey Part 1 {% endblock %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>
+        Golf Course Questions
+    </title>
+
+    <style>
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: white;
+            font-family: Verdana;
+            text-align: center;
+        }
+ 
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+ 
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+ 
+ 
+        /* Styling Button */
+        button {
+            background-color: gray;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Golf Course Review Questions</h1>
+
+    <!--Create Form-->
+    <form method="POST">
+        <div class="form-control">
+            <label for="date">Date Played at Course </label>
+
+            <input type="date" id="date" name="date"
+                value=""
+                min="20220101" max="20221231"></input>
+        </div>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label>
+                What is your gender?
+            </label>
+
+            <!-- Input Type Radio Buttons -->
+            <label for="gender">
+                <input type="radio"
+                    id="gender"
+                    name="gender"
+                    value ="Female"
+                    required> Female</input>
+                <br>
+
+                <input type="radio"
+                    id="gender"
+                    name="gender"
+                    value="Male"> Male</input>
+                <br>
+
+                <input type="radio"
+                    id="gender"
+                    name="gender"
+                    value="Other"> Other</input>
+            </label>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label for="selection" id="selection">
+            Select golf course
+            </label>
+
+            <select name="golf_course" id="golf_course" required>
+                <option value="">Select a Golf Course</option>
+                <option value="Golf Course 1">Golf Course 1</option>
+                <option value="Golf Course 2">Golf Course 2</option>
+                <option value="Golf Course 3">Golf Course 3</option>
+            </select>
+        </div>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label for="rating" id="label-rating">
+                Please rate the golf course
+            </label>
+
+            <!-- Dropdown options -->
+            <select name="golf_rating" id="golf_rating" required>
+                <option value="">Please select a number</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label>
+                How often do you visit our golf facility in one season?
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="visits">
+                <input type="radio"
+                    id="visits"
+                    name="visit"
+                    value="1-5"
+                    required> 1-5 times</input>
+                <br>
+
+                <input type="radio"
+                    id="visits"
+                    name="visit"
+                    value="5-10"> 5-10 times</input>
+                <br>
+
+                <input type="radio"
+                    id="visits"
+                    name="visit"
+                    value="11-15"> 11-15 times</input>
+                <br>
+
+                <input type="radio"
+                    id="visits"
+                    name="visit"
+                    value="16-20"> 16-20 times</input>
+                <br>
+
+                <input type="radio"
+                    id="visits"
+                    name="visit"
+                    value="21-more"> 21 times or more</input>
+            </label>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label>
+                Do you play with new or used golf balls?
+            </label>
+
+            <!-- Input Type Radio Buttons -->
+            <label for="Gball">
+                <input type="radio"
+                    id="Gball"
+                    name="Gball"
+                    value="Always use new"
+                    required> Always use new</input>
+                <br>
+
+                <input type="radio"
+                    id="Gball"
+                    name="Gball"
+                    value="Combination of New and Used"> Combination of New and Used</input>
+                <br>
+
+                <input type="radio"
+                    id="Gball"
+                    name="Gball"
+                    value="Mostly Used balls"> Mostly Used balls</input>
+            </label>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label>
+                What brand of clubs do you use?
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="club">
+                <input type="radio"
+                    id="club"
+                    name="club"
+                    value="Nike"
+                    required> Nike</input>
+                <br>
+
+                <input type="radio"
+                    id="club"
+                    name="club"
+                    value="Titleist"> Titleist</input>
+                <br>
+
+                <input type="radio"
+                    id="club"
+                    name="club"
+                    value="Callaway"> Callaway</input>
+                <br>
+
+                <input type="radio"
+                    id="club"
+                    name="club"
+                    value="Ping"> Ping</input>
+                <br>
+
+                <input type="radio"
+                    id="club"
+                    name="club"
+                    value="Taylormade"> Taylormade</input>
+                <br>
+
+                <input type="radio"
+                    id="club"
+                    name="club"
+                    value="Mix and Match"> Mix and Match</input>
+                <br>
+
+                <input type="radio"
+                    id="club"
+                    name="club"
+                    value="Other"> Other</input>
+           </label>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label for="rating" id="label-rating">
+                Please rate your review experience 
+            </label>
+
+            <!-- Dropdown options -->
+            <select name="review_rating" id="review_rating" required>
+                <option value="">Please select a number</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <div class="form-control">
+            <label for="comment">
+                Any additional feedback
+            </label> 
+
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment" maxlength="10000"
+                placeholder="Enter your comment(s) here"
+                value=""></textarea>
+        </div>
+        <br>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary"> Submit </button></p>
+    </form>
+</body>
+</html>
+{% endblock %}
